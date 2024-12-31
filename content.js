@@ -1,3 +1,6 @@
-console.log("Cookie Blocker is running on this page.");
+// Content script: Aktif sayfa URL'sini alıp background.js'ye iletiyoruz
+chrome.runtime.sendMessage({
+  action: 'checkCookies',
+  url: window.location.href
+});
 
-// Tarayıcıda her sayfada aktif olacak şekilde çalışacak.
